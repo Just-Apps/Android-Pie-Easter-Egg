@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.egg.paint;
+package com.github.justapps.egg.pie.paint;
 
 import static android.view.MotionEvent.ACTION_CANCEL;
 import static android.view.MotionEvent.ACTION_DOWN;
@@ -37,6 +37,10 @@ import android.widget.LinearLayout;
 import android.widget.Magnifier;
 
 import com.android.egg.R;
+import com.android.egg.paint.BrushPropertyDrawable;
+import com.android.egg.paint.CutoutAvoidingToolbar;
+import com.android.egg.paint.Painting;
+import com.android.egg.paint.Palette;
 
 import java.util.ArrayList;
 import java.util.Arrays;

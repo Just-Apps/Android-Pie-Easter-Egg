@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.internal.app;
+package com.github.justapps.egg.pie;
 
 import android.animation.TimeAnimator;
 import android.app.Activity;
