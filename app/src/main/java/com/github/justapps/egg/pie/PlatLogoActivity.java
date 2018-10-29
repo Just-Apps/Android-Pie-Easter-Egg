@@ -254,7 +254,7 @@ public class PlatLogoActivity extends Activity {
     private void launchNextStage() {
         final ContentResolver cr = getContentResolver();
 
-        if (Settings.System.getLong(cr, Settings.System.EGG_MODE, 0) == 0) {
+        /*if (Settings.System.getLong(cr, Settings.System.EGG_MODE, 0) == 0) {
             // For posterity: the moment this user unlocked the easter egg
             try {
                 Settings.System.putLong(cr,
@@ -263,7 +263,7 @@ public class PlatLogoActivity extends Activity {
             } catch (RuntimeException e) {
                 Log.e("PlatLogoActivity", "Can't write settings", e);
             }
-        }
+        }*/
         try {
             startActivity(new Intent(Intent.ACTION_MAIN)
                     .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK
