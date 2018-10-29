@@ -23,14 +23,12 @@ import android.content.Intent;
 import android.graphics.*;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.MotionEvent.PointerCoords;
 import android.view.View;
 import android.widget.FrameLayout;
 import com.github.justapps.egg.pie.paint.PaintActivity;
-import org.json.JSONObject;
 
 public class PlatLogoActivity extends Activity {
     FrameLayout layout;
@@ -211,6 +209,7 @@ public class PlatLogoActivity extends Activity {
                         break;
                     case MotionEvent.ACTION_CANCEL:
                     case MotionEvent.ACTION_UP:
+                        /*
                         try {
                             final String touchDataJson = Settings.System.getString(cr, TOUCH_STATS);
                             final JSONObject touchData = new JSONObject(
@@ -227,7 +226,7 @@ public class PlatLogoActivity extends Activity {
                         } catch (Exception e) {
                             Log.e("PlatLogoActivity", "Can't write touch settings", e);
                         }
-
+                        */
                         if (maxPointers == 1) {
                             tapCount ++;
                             if (tapCount < 7) {
