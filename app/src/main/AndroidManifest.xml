@@ -15,12 +15,6 @@
                 android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
                 android:label="@string/app_name"
                 android:theme="@style/AppTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <!--<category android:name="android.intent.category.LAUNCHER" />-->
-                <category android:name="com.android.internal.category.PLATLOGO" />
-            </intent-filter>
         </activity>
 
     </application>
