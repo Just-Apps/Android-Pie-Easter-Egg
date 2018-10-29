@@ -16,14 +16,8 @@
 
 package com.github.justapps.egg.pie.paint;
 
-import static android.view.MotionEvent.ACTION_CANCEL;
-import static android.view.MotionEvent.ACTION_DOWN;
-import static android.view.MotionEvent.ACTION_MOVE;
-import static android.view.MotionEvent.ACTION_UP;
-
 import android.app.Activity;
 import android.content.res.Configuration;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -35,17 +29,16 @@ import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Magnifier;
-
-import com.android.egg.R;
 import com.android.egg.paint.BrushPropertyDrawable;
 import com.android.egg.paint.CutoutAvoidingToolbar;
 import com.android.egg.paint.Painting;
 import com.android.egg.paint.Palette;
+import com.github.justapps.egg.pie.R;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.stream.IntStream;
+
+import static android.view.MotionEvent.*;
 
 public class PaintActivity extends Activity {
     private static final float MAX_BRUSH_WIDTH_DP = 100f;
@@ -64,31 +57,25 @@ public class PaintActivity extends Activity {
     private View.OnClickListener buttonHandler = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.btnBrush:
-                    view.setSelected(true);
-                    hideToolbar(colors);
-                    toggleToolbar(brushes);
-                    break;
-                case R.id.btnColor:
-                    view.setSelected(true);
-                    hideToolbar(brushes);
-                    toggleToolbar(colors);
-                    break;
-                case R.id.btnClear:
-                    painting.clear();
-                    break;
-                case R.id.btnSample:
-                    sampling = true;
-                    view.setSelected(true);
-                    break;
-                case R.id.btnZen:
-                    painting.setZenMode(!painting.getZenMode());
-                    view.animate()
-                            .setStartDelay(200)
-                            .setInterpolator(new OvershootInterpolator())
-                            .rotation(painting.getZenMode() ? 0f : 90f);
-                    break;
+            if (view.getId() == R.id.btnBrush) {
+                view.setSelected(true);
+                hideToolbar(colors);
+                toggleToolbar(brushes);
+            } else if (view.getId() == R.id.btnColor) {
+                view.setSelected(true);
+                hideToolbar(brushes);
+                toggleToolbar(colors);
+            } else if (view.getId() == R.id.btnClear) {
+                painting.clear();
+            } else if (view.getId() == R.id.btnSample) {
+                sampling = true;
+                view.setSelected(true);
+            } else if (view.getId() == R.id.btnZen) {
+                painting.setZenMode(!painting.getZenMode());
+                view.animate()
+                        .setStartDelay(200)
+                        .setInterpolator(new OvershootInterpolator())
+                        .rotation(painting.getZenMode() ? 0f : 90f);
             }
         }
     };
