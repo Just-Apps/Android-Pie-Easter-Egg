@@ -164,7 +164,7 @@ public class PlatLogoActivity extends Activity {
 
         @Override
         public int getOpacity() {
-            return 0;
+            return PixelFormat.UNKNOWN;
         }
     }
 
