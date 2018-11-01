@@ -17,6 +17,7 @@
 package com.github.justapps.egg.pie;
 
 import android.animation.TimeAnimator;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -171,6 +172,8 @@ public class PlatLogoActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        hideStatusBar();
+
         layout = new FrameLayout(this);
         setContentView(layout);
 
@@ -243,6 +246,32 @@ public class PlatLogoActivity extends Activity {
                 return true;
             }
         });
+    }
+
+    private void hideStatusBar() {
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+        ActionBar actionBar = getActionBar();
+        if (actionBar != null) {
+            actionBar.hide();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        showStatusBar();
+    }
+
+    private void showStatusBar() {
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_VISIBLE;
+        decorView.setSystemUiVisibility(uiOptions);
+        ActionBar actionBar = getActionBar();
+        if (actionBar != null) {
+            actionBar.show();
+        }
     }
 
     private void launchNextStage() {
