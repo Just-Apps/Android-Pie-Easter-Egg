@@ -327,11 +327,13 @@ public class PaintActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        WindowManager.LayoutParams lp = getWindow().getAttributes();
-        lp.flags = lp.flags
-                | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
-                | WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS;
-        getWindow().setAttributes(lp);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            WindowManager.LayoutParams lp = getWindow().getAttributes();
+            lp.flags = lp.flags
+                    | WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN
+                    | WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS;
+            getWindow().setAttributes(lp);
+        }
 
         maxBrushWidth = MAX_BRUSH_WIDTH_DP * getResources().getDisplayMetrics().density;
         minBrushWidth = MIN_BRUSH_WIDTH_DP * getResources().getDisplayMetrics().density;
