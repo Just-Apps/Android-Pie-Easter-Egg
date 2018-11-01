@@ -1,1 +1,1 @@
-include ':egg'
+include ':app', ':egg'
