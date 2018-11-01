@@ -17,12 +17,14 @@
 package com.github.justapps.egg.pie;
 
 import android.animation.TimeAnimator;
+import android.annotation.TargetApi;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.*;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -31,6 +33,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import com.github.justapps.egg.pie.paint.PaintActivity;
 
+@TargetApi(Build.VERSION_CODES.LOLLIPOP)
 public class PlatLogoActivity extends Activity {
     FrameLayout layout;
     TimeAnimator anim;

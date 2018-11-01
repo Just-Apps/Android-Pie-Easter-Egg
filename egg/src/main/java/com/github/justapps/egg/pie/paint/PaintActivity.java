@@ -16,9 +16,11 @@
 
 package com.github.justapps.egg.pie.paint;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
@@ -40,6 +42,7 @@ import java.util.stream.IntStream;
 
 import static android.view.MotionEvent.*;
 
+@TargetApi(Build.VERSION_CODES.P)
 public class PaintActivity extends Activity {
     private static final float MAX_BRUSH_WIDTH_DP = 100f;
     private static final float MIN_BRUSH_WIDTH_DP = 1f;
