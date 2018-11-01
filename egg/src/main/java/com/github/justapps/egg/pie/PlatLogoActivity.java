@@ -271,11 +271,7 @@ public class PlatLogoActivity extends Activity {
                 Log.e("PlatLogoActivity", "Can't write settings", e);
             }
         }*/
-        startActivity(
-                new Intent(this, PaintActivity.class)
-                        .setAction(Intent.ACTION_MAIN)
-                        .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK)
-        );
+        startActivity(new Intent(this, PaintActivity.class));
         finish();
     }
 
