@@ -30,19 +30,20 @@ import android.view.animation.OvershootInterpolator;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.Magnifier;
 import com.android.egg.paint.BrushPropertyDrawable;
 import com.android.egg.paint.CutoutAvoidingToolbar;
 import com.android.egg.paint.Painting;
 import com.android.egg.paint.Palette;
 import com.github.justapps.egg.pie.R;
+import com.github.justapps.egg.pie.compat.MagnifierCompat;
+import com.github.justapps.egg.pie.compat.MagnifierFactory;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;
 
 import static android.view.MotionEvent.*;
 
-@TargetApi(Build.VERSION_CODES.P)
+@TargetApi(Build.VERSION_CODES.N)
 public class PaintActivity extends Activity {
     private static final float MAX_BRUSH_WIDTH_DP = 100f;
     private static final float MIN_BRUSH_WIDTH_DP = 1f;
@@ -54,7 +55,7 @@ public class PaintActivity extends Activity {
     private CutoutAvoidingToolbar toolbar = null;
     private LinearLayout brushes = null;
     private LinearLayout colors = null;
-    private Magnifier magnifier = null;
+    private MagnifierCompat magnifier = null;
     private boolean sampling = false;
 
     private View.OnClickListener buttonHandler = new View.OnClickListener() {
@@ -142,7 +143,7 @@ public class PaintActivity extends Activity {
         brushes = findViewById(R.id.brushes);
         colors = findViewById(R.id.colors);
 
-        magnifier = new Magnifier(painting);
+        magnifier = MagnifierFactory.createMagnifierCompat(painting);
 
         painting.setOnTouchListener(
                 new View.OnTouchListener() {
