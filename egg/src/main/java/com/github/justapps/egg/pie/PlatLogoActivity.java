@@ -31,6 +31,7 @@ import android.view.MotionEvent;
 import android.view.MotionEvent.PointerCoords;
 import android.view.View;
 import android.widget.FrameLayout;
+import com.github.justapps.egg.pie.common.BarHelper;
 import com.github.justapps.egg.pie.paint.PaintActivity;
 
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -175,7 +176,7 @@ public class PlatLogoActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        hideStatusBar();
+        BarHelper.hideStatusBar(this);
 
         layout = new FrameLayout(this);
         setContentView(layout);
@@ -251,30 +252,10 @@ public class PlatLogoActivity extends Activity {
         });
     }
 
-    private void hideStatusBar() {
-        View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
-        decorView.setSystemUiVisibility(uiOptions);
-        ActionBar actionBar = getActionBar();
-        if (actionBar != null) {
-            actionBar.hide();
-        }
-    }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        showStatusBar();
-    }
-
-    private void showStatusBar() {
-        View decorView = getWindow().getDecorView();
-        int uiOptions = View.SYSTEM_UI_FLAG_VISIBLE;
-        decorView.setSystemUiVisibility(uiOptions);
-        ActionBar actionBar = getActionBar();
-        if (actionBar != null) {
-            actionBar.show();
-        }
+        BarHelper.showStatusBar(this);
     }
 
     private void launchNextStage() {

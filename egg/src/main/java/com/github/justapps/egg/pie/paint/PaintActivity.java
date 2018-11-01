@@ -35,6 +35,7 @@ import com.android.egg.paint.CutoutAvoidingToolbar;
 import com.android.egg.paint.Painting;
 import com.android.egg.paint.Palette;
 import com.github.justapps.egg.pie.R;
+import com.github.justapps.egg.pie.common.BarHelper;
 import com.github.justapps.egg.pie.compat.MagnifierCompat;
 import com.github.justapps.egg.pie.compat.MagnifierFactory;
 
@@ -335,6 +336,8 @@ public class PaintActivity extends Activity {
             getWindow().setAttributes(lp);
         }
 
+        BarHelper.hideStatusBar(this);
+
         maxBrushWidth = MAX_BRUSH_WIDTH_DP * getResources().getDisplayMetrics().density;
         minBrushWidth = MIN_BRUSH_WIDTH_DP * getResources().getDisplayMetrics().density;
 
@@ -347,4 +350,9 @@ public class PaintActivity extends Activity {
         super.onPostResume();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        BarHelper.showStatusBar(this);
+    }
 }
