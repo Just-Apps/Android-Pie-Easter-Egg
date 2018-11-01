@@ -164,6 +164,7 @@ public class PaintActivity extends Activity {
                                     findViewById(R.id.btnSample).setSelected(false);
                                     sampling = false;
                                     magnifier.dismiss();
+                                    return true;
                                 }
                                 break;
                             case ACTION_UP:
@@ -174,6 +175,7 @@ public class PaintActivity extends Activity {
                                     painting.setPaintColor(
                                             painting.sampleAt(event.getX(), event.getY()));
                                     refreshBrushAndColor();
+                                    return true;
                                 }
                                 break;
                         }
