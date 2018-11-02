@@ -10,7 +10,7 @@ android {
         minSdkVersion 17
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     compileOptions {
@@ -40,8 +40,8 @@ ext {
     orgName = 'just-apps' //your user name
 
     publishedGroupId = 'com.github.justapps.egg.pie' //aaaa : the librairy group
-    artifact = 'pie-egg' //BBBB : the library name
-    libraryVersion = "1.0" //the librairy version
+    artifact = 'egg' //BBBB : the library name
+    libraryVersion = "1.0.1" //the librairy version
 
     //the library will be : aaaa:BBBB:version
 
