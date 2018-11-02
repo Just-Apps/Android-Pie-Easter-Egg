@@ -7,7 +7,7 @@ task sourcesJar(type: Jar) {
     classifier = 'sources'
 }
 
-task javadoc(type: Javadoc) {
+/*task javadoc(type: Javadoc) {
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
 }
@@ -15,9 +15,9 @@ task javadoc(type: Javadoc) {
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
-}
+}*/
 artifacts {
-    archives javadocJar
+    //archives javadocJar
     archives sourcesJar
 }
 

@@ -36,8 +36,8 @@ dependencies {
 
 ext {
     bintrayRepo = 'android-pie-easter-egg' //the maven repo name (created on bintray)
-    bintrayName = 'Android Pie Easter Egg' //the name you want to give at your project on bintray
-    orgName = 'Just-Apps' //your user name
+    bintrayName = 'Android-Pie-Easter-Egg' //the name you want to give at your project on bintray
+    orgName = 'just-apps' //your user name
 
     publishedGroupId = 'com.github.justapps.egg.pie' //aaaa : the librairy group
     artifact = 'pie-egg' //BBBB : the library name
