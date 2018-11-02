@@ -1,8 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.github.justapps.egg.pie">
 
-    <application
-            android:supportsRtl="true"
-            android:theme="@style/PieEggTheme">
+    <application android:supportsRtl="true">
 
         <activity android:name=".PlatLogoActivity"
                   android:theme="@style/PieEggPlatLogoTheme"
