@@ -1,0 +1,98 @@
+<!--
+    Copyright (C) 2018 The Android Open Source Project
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+         http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+-->
+<resources xmlns:tool="http://schemas.android.com/tools">
+
+    <style name="PieEggPlatLogoTheme">
+        <item name="isLightTheme">false</item>
+
+        <item name="colorBackgroundFloating">?android:attr/colorBackground</item>
+
+        <!-- Text styles -->
+        <item name="editTextColor">@android:color/primary_text_light</item>
+        <item name="editTextBackground">@android:drawable/edit_text</item>
+
+        <item name="textAppearanceLargePopupMenu">@android:style/TextAppearance.Widget.PopupMenu.Large</item>
+        <item name="textAppearanceSmallPopupMenu">@android:style/TextAppearance.Widget.PopupMenu.Small</item>
+
+        <!-- Button styles -->
+        <item name="buttonStyle">@android:style/Widget.Button</item>
+
+        <item name="buttonStyleSmall">@android:style/Widget.Button.Small</item>
+
+        <!-- List attributes -->
+        <item name="listPreferredItemHeight">64dip</item>
+        <item name="listPreferredItemHeightSmall">?attr/listPreferredItemHeight</item>
+        <item name="listPreferredItemHeightLarge">?attr/listPreferredItemHeight</item>
+        <item name="dropdownListPreferredItemHeight">?attr/listPreferredItemHeight</item>
+        <item name="textAppearanceListItem">?android:attr/textAppearanceLarge</item>
+        <item name="textAppearanceListItemSmall">?android:attr/textAppearanceLarge</item>
+        <item name="textAppearanceListItemSecondary">?android:attr/textAppearanceSmall</item>
+        <item name="listPreferredItemPaddingLeft">6dip</item>
+        <item name="listPreferredItemPaddingRight">6dip</item>
+
+        <item name="listChoiceBackgroundIndicator">@android:drawable/list_selector_background</item>
+
+        <item name="listDividerAlertDialog">@android:drawable/divider_horizontal_bright</item>
+
+        <!-- Window attributes -->
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowActionModeOverlay">false</item>
+
+        <!-- Define these here; ContextThemeWrappers around themes that define them should
+             always clear these values. -->
+        <item name="windowFixedWidthMajor">0dp</item>
+        <item name="windowFixedWidthMinor">0dp</item>
+        <item name="windowFixedHeightMajor">0dp</item>
+        <item name="windowFixedHeightMinor">0dp</item>
+
+        <!-- Dialog attributes -->
+        <item name="dialogTheme">@android:style/Theme.Dialog</item>
+        <item name="dialogCornerRadius">0dp</item>
+
+        <!-- AlertDialog attributes -->
+        <item name="alertDialogCenterButtons">true</item>
+
+        <!-- Widget styles -->
+        <item name="autoCompleteTextViewStyle">@android:style/Widget.AutoCompleteTextView</item>
+        <item name="checkboxStyle">@android:style/Widget.CompoundButton.CheckBox</item>
+        <item name="dropDownListViewStyle">@android:style/Widget.ListView.DropDown</item>
+        <item name="editTextStyle">@android:style/Widget.EditText</item>
+        <item name="imageButtonStyle">@android:style/Widget.ImageButton</item>
+        <item name="popupWindowStyle">@android:style/Widget.PopupWindow</item>
+        <item name="progressBarStyle">@android:style/Widget.ProgressBar</item>
+        <item name="seekBarStyle">@android:style/Widget.SeekBar</item>
+        <item name="ratingBarStyle">@android:style/Widget.RatingBar</item>
+        <item name="radioButtonStyle">@android:style/Widget.CompoundButton.RadioButton</item>
+        <item name="spinnerStyle">@android:style/Widget.Spinner</item>
+        <item name="spinnerDropDownItemStyle">@android:style/Widget.DropDownItem.Spinner</item>
+        <item name="listPopupWindowStyle">@android:style/Widget.ListPopupWindow</item>
+        <item name="popupMenuStyle">@android:style/Widget.PopupMenu</item>
+
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowShowWallpaper">true</item>
+
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="PieEggTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar.Fullscreen">
+        <item name="android:windowLayoutInDisplayCutoutMode" tool:targetApi="28">shortEdges</item>
+        <item name="android:windowLightNavigationBar" tool:targetApi="27">true</item>
+    </style>
+
+</resources>

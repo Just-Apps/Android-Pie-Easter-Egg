@@ -1,0 +1,64 @@
+apply plugin: 'com.android.library'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+}
+
+ext {
+    bintrayRepo = 'android-pie-easter-egg' //the maven repo name (created on bintray)
+    bintrayName = 'Android-Pie-Easter-Egg' //the name you want to give at your project on bintray
+    orgName = 'just-apps' //your user name
+
+    publishedGroupId = 'com.github.justapps.egg.pie' //aaaa : the librairy group
+    artifact = 'pie-egg' //BBBB : the library name
+    libraryVersion = "1.0" //the librairy version
+
+    //the library will be : aaaa:BBBB:version
+
+    libraryName = 'Android Pie Easter Egg'
+    libraryDescription = 'Android 9 (Pie) Easter Egg'
+
+    siteUrl = 'https://github.com/Just-Apps/android-pie-easter-egg'
+    gitUrl = 'https://github.com/Just-Apps/android-pie-easter-egg.git'
+
+    developerId = 'just-apps'
+    developerName = 'Alexander Justus'
+    developerEmail = 'alexander.justus.apps@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: rootProject.file('gradle/install-v1.gradle')
+apply from: rootProject.file('gradle/bintray-android-v1.gradle')
