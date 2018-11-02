@@ -6,10 +6,10 @@
                  android:icon="@mipmap/ic_launcher"
                  android:roundIcon="@mipmap/ic_launcher_round"
                  android:supportsRtl="true"
-                 android:theme="@style/AppTheme">
+                 android:theme="@style/PieEggPlatLogoTheme">
 
         <activity android:name="com.github.justapps.egg.pie.PlatLogoActivity"
-                  android:theme="@style/Theme.Wallpaper.NoTitleBar.Fullscreen"
+                  android:theme="@style/PieEggPlatLogoTheme"
                   android:configChanges="orientation|keyboardHidden"
                   android:process=":ui">
             <intent-filter>

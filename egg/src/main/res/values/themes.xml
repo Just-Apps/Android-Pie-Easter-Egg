@@ -35,7 +35,7 @@ please see themes_device_defaults.xml.
          <p>If you're developing for API level 11 and higher, you should instead use {@link
          #Theme_Holo} or {@link #Theme_DeviceDefault}.</p>
     -->
-    <style name="Theme">
+    <style name="PieEggPlatLogoTheme">
         <item name="isLightTheme">false</item>
 
         <item name="colorBackgroundFloating">?android:attr/colorBackground</item>
@@ -68,7 +68,7 @@ please see themes_device_defaults.xml.
         <item name="listDividerAlertDialog">@android:drawable/divider_horizontal_bright</item>
 
         <!-- Window attributes -->
-        <item name="windowNoTitle">false</item>
+        <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowActionModeOverlay">false</item>
 
@@ -101,24 +101,11 @@ please see themes_device_defaults.xml.
         <item name="spinnerDropDownItemStyle">@android:style/Widget.DropDownItem.Spinner</item>
         <item name="listPopupWindowStyle">@android:style/Widget.ListPopupWindow</item>
         <item name="popupMenuStyle">@android:style/Widget.PopupMenu</item>
-    </style>
 
-    <!-- Theme for windows that want to have the user's selected
-         wallpaper appear behind them (for API level 10 and lower).  -->
-    <style name="Theme.Wallpaper">
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowShowWallpaper">true</item>
-    </style>
 
-    <!-- Variant of {@link #Theme_Wallpaper} that has no title bar -->
-    <style name="Theme.Wallpaper.NoTitleBar">
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <!-- Variant of {@link #Theme_Wallpaper} that
-         has no title bar or status bar. -->
-    <style name="Theme.Wallpaper.NoTitleBar.Fullscreen">
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
     </style>
