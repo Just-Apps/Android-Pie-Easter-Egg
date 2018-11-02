@@ -13,7 +13,7 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 -->
-<resources>
+<resources xmlns:tool="http://schemas.android.com/tools">
 
     <style name="PieEggPlatLogoTheme">
         <item name="isLightTheme">false</item>
@@ -91,8 +91,8 @@
     </style>
 
     <style name="PieEggTheme" parent="@android:style/Theme.DeviceDefault.Light.NoActionBar.Fullscreen">
-        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
-        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:windowLayoutInDisplayCutoutMode" tool:targetApi="28">shortEdges</item>
+        <item name="android:windowLightNavigationBar" tool:targetApi="27">true</item>
     </style>
 
 </resources>
