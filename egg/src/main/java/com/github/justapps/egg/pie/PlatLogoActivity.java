@@ -18,7 +18,6 @@ package com.github.justapps.egg.pie;
 
 import android.animation.TimeAnimator;
 import android.annotation.TargetApi;
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -176,8 +175,6 @@ public class PlatLogoActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        BarHelper.hideStatusBar(this);
-
         layout = new FrameLayout(this);
         setContentView(layout);
 
@@ -253,8 +250,14 @@ public class PlatLogoActivity extends Activity {
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    protected void onResume() {
+        super.onResume();
+        BarHelper.hideStatusBar(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
         BarHelper.showStatusBar(this);
     }
 

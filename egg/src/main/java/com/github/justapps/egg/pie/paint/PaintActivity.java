@@ -336,8 +336,6 @@ public class PaintActivity extends Activity {
             getWindow().setAttributes(lp);
         }
 
-        BarHelper.hideStatusBar(this);
-
         maxBrushWidth = MAX_BRUSH_WIDTH_DP * getResources().getDisplayMetrics().density;
         minBrushWidth = MIN_BRUSH_WIDTH_DP * getResources().getDisplayMetrics().density;
 
@@ -351,8 +349,14 @@ public class PaintActivity extends Activity {
     }
 
     @Override
-    protected void onDestroy() {
-        super.onDestroy();
+    protected void onResume() {
+        super.onResume();
+        BarHelper.hideStatusBar(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
         BarHelper.showStatusBar(this);
     }
 }
