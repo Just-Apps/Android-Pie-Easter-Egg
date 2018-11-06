@@ -355,8 +355,8 @@ public class PaintActivity extends Activity {
     }
 
     @Override
-    protected void onPause() {
-        super.onPause();
+    protected void onStop() {
+        super.onStop();
         BarHelper.showStatusBar(this);
     }
 }
