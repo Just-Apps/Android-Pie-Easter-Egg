@@ -255,12 +255,6 @@ public class PlatLogoActivity extends Activity {
         BarHelper.hideStatusBar(this);
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        BarHelper.showStatusBar(this);
-    }
-
     private void launchNextStage() {
         final ContentResolver cr = getContentResolver();
 
@@ -304,5 +298,6 @@ public class PlatLogoActivity extends Activity {
             anim = null;
         }
         super.onStop();
+        BarHelper.showStatusBar(this);
     }
 }

@@ -5,12 +5,14 @@
         <activity android:name=".PlatLogoActivity"
                   android:theme="@style/PieEggPlatLogoTheme"
                   android:configChanges="orientation|keyboardHidden"
+                  android:launchMode="singleInstance"
                   android:process=":ui">
         </activity>
 
         <activity
                 android:name=".paint.PaintActivity"
                 android:configChanges="orientation|keyboardHidden|screenSize|uiMode"
+                android:launchMode="singleInstance"
                 android:label="@string/app_name"
                 android:theme="@style/PieEggTheme">
         </activity>
